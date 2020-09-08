@@ -1,6 +1,164 @@
 $primary-color: white;
 $bg: black;
+$h1-font-size: 6vh;
+$h2-font-size: 4vh;
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+}
+
 h1 {
+  font-size: $h1-font-size;
   color: $primary-color;
   background-color: $bg;
+  text-align: center;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  text-align: center;
+}
+
+.main-overview {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  div {
+    display: grid;
+    justify-content: center;
+  }
+
+  .top-half {
+    grid-row: 1;
+    background-color: #000;
+    align-content: end;
+    height: 85vh;
+  }
+
+  .bottom-half {
+    grid-row: 2;
+    align-content: start;
+    height: 15vh;
+  }
+
+  .icons {
+    display: grid;
+    width: 10rem;
+    height: 8vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: center;
+
+    a {
+      justify-self: center;
+      align-self: center;
+    }
+
+    img {
+      height: 4vh;
+      cursor: pointer;
+    }
+  }
+}
+
+.header-container {
+  position: absolute;
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 1fr 4rem 4rem 4rem 4rem 4rem 1rem;
+  align-items: center;
+  justify-items: center;
+  height: 3rem;
+
+  h4 {
+    color: $primary-color;
+    cursor: pointer;
+  }
+
+  a:nth-of-type(1) {
+    grid-column: 2;
+  }
+}
+
+.ufo {
+  position: absolute;
+  margin-top: -15rem;
+  // display: none;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.projects-container {
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    grid-gap: 1rem;
+
+    div {
+      height: 20rem;
+      width: 14rem;
+      border-radius: 0.3rem;
+      /* background-color: #000; */
+      /* border: .1rem solid #b7b7b7; */
+      box-shadow: 5px 4px 8px 2px #bdbdbd;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 12rem 2rem 4rem 2rem;
+      padding: 1rem;
+
+      img {
+        grid-row: 1;
+        grid-column: 1 / span 3;
+        width: 14rem;
+        height: 12rem;
+        align-self: center;
+        justify-self: center;
+        object-fit: cover;
+        border-radius: 0.2rem;
+        // filter: grayscale(100%);
+      }
+
+      h3 {
+        grid-row: 2;
+        grid-column: 1 / span 3;
+      }
+
+      h5 {
+        grid-row: 3;
+        grid-column: 1 / span 3;
+        font-weight: normal;
+      }
+    }
+
+    .project:hover {
+      img {
+        // filter: grayscale(0%);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .projects-container {
+    .projects {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
 }
