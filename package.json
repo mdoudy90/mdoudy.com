@@ -1,0 +1,35 @@
+{
+  "name": "mdoudy.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Michael Doudy",
+  "license": "ISC",
+  "scripts": {
+    "start": "node server/index.js",
+    "heroku-postbuild": "webpack -p",
+    "dev-react": "webpack -d --watch",
+    "prod-react": "webpack -p"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "css-loader": "^4.2.2",
+    "sass-loader": "^10.0.1",
+    "node-sass": "^4.14.1",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "file-loader": "^6.0.0"
+  }
+}
