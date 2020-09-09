@@ -2,10 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Main } from './components/Main';
 import { Header } from './components/Header';
 import { Projects } from './components/Projects';
+import { Ufo } from './components/Ufo';
 
 export const App = () => {
   const [scrollTop, setScrollTop] = useState(0);
   const [ufoMarginTop, setUfoMarginTop] = useState(-280);
+  const [rayDisplay, setRayDisplay] = useState([0, 0, 0, 0, 0]);
   const pageRef = useRef(null);
 
   const onScroll = () => {
@@ -17,8 +19,13 @@ export const App = () => {
 
   useEffect(() => {
     const marginTop = document.getElementById('ufo').offsetTop;
-    if (scrollTop <= 270 && ufoMarginTop < 50) { setUfoMarginTop(marginTop + 50) }
-    if (scrollTop > 270) { setUfoMarginTop(marginTop - 50) }
+    if (scrollTop < 240 && ufoMarginTop < 50) setUfoMarginTop(marginTop + 40);
+    if (scrollTop >= 260) setUfoMarginTop(marginTop - 25);
+    if (scrollTop > 80) setRayDisplay([1, 0, 0, 0, 0]);
+    if (scrollTop > 120) setRayDisplay([1, 1, 0, 0, 0]);
+    if (scrollTop > 160) setRayDisplay([1, 1, 1, 0, 0]);
+    if (scrollTop > 200) setRayDisplay([1, 1, 1, 1, 0]);
+    if (scrollTop > 240) setRayDisplay([1, 1, 1, 1, 1]);
   }, [scrollTop]);
 
   let marginTop = ufoMarginTop + 'px';
@@ -36,22 +43,9 @@ export const App = () => {
           height: '100vh',
           overflow: 'scroll',
         }}>
-
-        <img
-          id='ufo'
-          className='ufo'
-          style={{
-            marginTop
-          }}
-          src='./assets/ufo-icon.png'
-        />
+        <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
         <Main />
         <Projects />
-        <p>This demonstrates how to get the scrollTop position within a scrollable react component.</p>
-        <p>ScrollTop is {scrollTop}</p>
-        <p>This demonstrates how to get the scrollTop position within a scrollable react component.</p>
-        <p>ScrollTop is {scrollTop}</p>
-
       </div>
     </>
   );

@@ -22,11 +22,16 @@ h1 {
   color: $primary-color;
   background-color: $bg;
   text-align: center;
+  font-family: 'system-ui';
+  font-weight: 200;
+  z-index: 10;
 }
 
 h2 {
   font-size: $h2-font-size;
   text-align: center;
+  font-family: 'system-ui';
+  font-weight: 200;
 }
 
 .main-overview {
@@ -90,14 +95,35 @@ h2 {
   }
 }
 
-.ufo {
+.ufo-container {
+  // display: none;
   position: absolute;
   margin-top: -15rem;
-  // display: none;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
+
+  .ufo {
+    position: absolute;
+    grid-template-rows: 8rem repeat(5, 1.7rem);
+    display: grid;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+    .ray {
+      height: 50px;
+      display: none;
+    }
+
+    .ray-visible {
+      height: 50px;
+    }
+
+  }
 }
 
 .projects-container {
@@ -153,11 +179,10 @@ h2 {
 
           img {
             width: 2rem;
-            height: 2rem
+            height: 2rem;
           }
         }
       }
-
     }
 
     .project:hover {
