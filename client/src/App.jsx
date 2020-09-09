@@ -35,24 +35,22 @@ export const App = () => {
   console.log(marginTop);
 
   return (
-    <>
+    <div
+      className='app-container'
+      ref={pageRef}
+      onScroll={onScroll}
+      style={{
+        height: '100vh',
+        overflow: 'scroll',
+      }}>
       {/* <Header /> */}
       {/* <Main /> */}
-
-      <div
-        ref={pageRef}
-        onScroll={onScroll}
-        style={{
-          height: '100vh',
-          overflow: 'scroll',
-        }}>
-        <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
-        <Main />
-        <Projects />
-        <Skills />
-        <About />
-        <ContactForm />
-      </div>
-    </>
+      <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
+      <Main />
+      <Projects />
+      <Skills />
+      <About />
+      <ContactForm />
+    </div>
   );
 };
