@@ -122,79 +122,161 @@ h2 {
     .ray-visible {
       height: 50px;
     }
-
   }
 }
 
-.projects-container {
-  .projects {
+.module-container {
+  display: grid;
+  grid-template-rows: 5rem 1fr;
+  padding-bottom: 10rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  grid-gap: 1rem;
+
+  .project {
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    justify-content: center;
-    grid-gap: 1rem;
+    grid-template-rows: 12rem 2rem 4rem 2rem;
+    padding: 1rem;
+    height: 20rem;
+    width: 14rem;
+    border-radius: 0.3rem;
+    /* background-color: #000; */
+    /* border: .1rem solid #b7b7b7; */
+    box-shadow: 5px 4px 8px 2px #bdbdbd;
 
-    .project {
-      display: grid;
-      grid-template-rows: 12rem 2rem 4rem 2rem;
-      padding: 1rem;
-      height: 20rem;
+    img {
+      grid-row: 1;
       width: 14rem;
-      border-radius: 0.3rem;
-      /* background-color: #000; */
-      /* border: .1rem solid #b7b7b7; */
-      box-shadow: 5px 4px 8px 2px #bdbdbd;
+      height: 12rem;
+      align-self: center;
+      justify-self: center;
+      object-fit: cover;
+      border-radius: 0.2rem;
+      // filter: grayscale(100%);
+    }
 
-      img {
-        grid-row: 1;
-        width: 14rem;
-        height: 12rem;
-        align-self: center;
-        justify-self: center;
-        object-fit: cover;
-        border-radius: 0.2rem;
-        // filter: grayscale(100%);
+    h3 {
+      grid-row: 2;
+    }
+
+    h5 {
+      grid-row: 3;
+      font-weight: normal;
+    }
+
+    .project-icons {
+      grid-row: 4;
+      display: grid;
+      grid-template-columns: 1fr 2.1rem 2.1rem;
+
+      a:nth-of-type(1) {
+        grid-column: 2;
       }
 
-      h3 {
-        grid-row: 2;
-      }
+      a {
+        justify-self: end;
+        cursor: pointer;
 
-      h5 {
-        grid-row: 3;
-        font-weight: normal;
-      }
-
-      .project-icons {
-        grid-row: 4;
-        display: grid;
-        grid-template-columns: 1fr 2.1rem 2.1rem;
-
-        a:nth-of-type(1) {
-          grid-column: 2;
-        }
-
-        a {
-          justify-self: end;
-          cursor: pointer;
-
-          img {
-            width: 2rem;
-            height: 2rem;
-          }
+        img {
+          width: 2rem;
+          height: 2rem;
         }
       }
     }
+  }
 
-    .project:hover {
-      img {
-        // filter: grayscale(0%);
-      }
+  .project:hover {
+    img {
+      // filter: grayscale(0%);
+    }
+  }
+}
+
+.skills {
+  display: grid;
+  height: 20rem;
+  width: 48rem;
+  justify-content: center;
+  justify-self: center;
+  grid-gap: 1rem;
+  box-shadow: 5px 4px 8px 2px #bdbdbd;
+  border-radius: 0.3rem;
+  padding: 1rem;
+}
+
+.about {
+  display: grid;
+  height: 30rem;
+  width: 48rem;
+  justify-content: center;
+  justify-self: center;
+  grid-gap: 1rem;
+  box-shadow: 5px 4px 8px 2px #bdbdbd;
+  border-radius: 0.3rem;
+  padding: 1rem;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  // grid-template-rows: repeat(auto, 1fr);
+  height: 22rem;
+  width: 48rem;
+  /* grid-template-rows: 2rem 2rem 2rem 8rem 2rem; */
+  justify-content: center;
+  justify-self: center;
+  grid-gap: 1rem;
+  /* border: .1rem solid #b7b7b7; */
+  box-shadow: 5px 4px 8px 2px #bdbdbd;
+  border-radius: 0.3rem;
+  padding: 1rem;
+
+  .contact-links {
+    grid-column: 1;
+    // padding: 1rem;
+    border-right: 0.1rem #e2e2e2 solid;
+  }
+
+  .contact-inputs {
+    grid-column: 2;
+    display: grid;
+    align-items: center;
+    // padding: 1rem;
+
+    input {
+      width: 15rem;
+      height: 1.3rem;
+      border: 0.1rem solid #cccccc;
+      border-radius: 0.3rem;
+    }
+
+    textarea {
+      width: 99%;
+      height: 6rem;
+      border: 0.1rem solid #cccccc;
+      border-radius: 0.3rem;
+    }
+
+    button {
+      color: #fff;
+      width: 6rem;
+      height: 2.5rem;
+      border: none;
+      border-radius: 0.3rem;
+      background-color: #03a9f49e;
+      font-size: 1.2rem;
+      justify-self: end;
+      cursor: pointer;
     }
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .projects-container {
+  .module-container {
     .projects {
       grid-template-columns: 1fr;
       justify-items: center;

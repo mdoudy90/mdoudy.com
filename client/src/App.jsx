@@ -2,6 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Main } from './components/Main';
 import { Header } from './components/Header';
 import { Projects } from './components/Projects';
+import { Skills } from './components/Skills';
+import { About } from './components/About';
+import { ContactForm } from './components/ContactForm';
 import { Ufo } from './components/Ufo';
 
 export const App = () => {
@@ -13,7 +16,7 @@ export const App = () => {
   const onScroll = () => {
     const scrollY = window.scrollY;
     const newScrollTop = pageRef.current.scrollTop;
-    console.log(`onScroll, window.scrollY: ${scrollY} myRef.scrollTop: ${newScrollTop}`);
+    // console.log(`onScroll, window.scrollY: ${scrollY} myRef.scrollTop: ${newScrollTop}`);
     setScrollTop(newScrollTop);
   };
 
@@ -46,6 +49,9 @@ export const App = () => {
         <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
         <Main />
         <Projects />
+        <Skills />
+        <About />
+        <ContactForm />
       </div>
     </>
   );
