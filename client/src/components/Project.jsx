@@ -6,9 +6,10 @@ export const Project = ({name, explanation, image, githubLink, liveDemoLink}) =>
       <img src = {image} />
       <h3>{name}</h3>
       <h5>{explanation}</h5>
-      <button>Github Logo</button>
-      <button>Live Demo</button>
-      <button>i</button>
+      <div className='project-icons'>
+        <a href={githubLink}><img src='./assets/github-gray-icon.png'/></a>
+        <a href=''><img src='./assets/info-gray-icon.png'/></a>
+      </div>
     </div>
   );
 };

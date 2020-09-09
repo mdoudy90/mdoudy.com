@@ -107,24 +107,19 @@ h2 {
     justify-content: center;
     grid-gap: 1rem;
 
-    div {
+    .project {
+      display: grid;
+      grid-template-rows: 12rem 2rem 4rem 2rem;
+      padding: 1rem;
       height: 20rem;
       width: 14rem;
       border-radius: 0.3rem;
       /* background-color: #000; */
       /* border: .1rem solid #b7b7b7; */
       box-shadow: 5px 4px 8px 2px #bdbdbd;
-    }
-
-    .project {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 12rem 2rem 4rem 2rem;
-      padding: 1rem;
 
       img {
         grid-row: 1;
-        grid-column: 1 / span 3;
         width: 14rem;
         height: 12rem;
         align-self: center;
@@ -136,14 +131,33 @@ h2 {
 
       h3 {
         grid-row: 2;
-        grid-column: 1 / span 3;
       }
 
       h5 {
         grid-row: 3;
-        grid-column: 1 / span 3;
         font-weight: normal;
       }
+
+      .project-icons {
+        grid-row: 4;
+        display: grid;
+        grid-template-columns: 1fr 2.1rem 2.1rem;
+
+        a:nth-of-type(1) {
+          grid-column: 2;
+        }
+
+        a {
+          justify-self: end;
+          cursor: pointer;
+
+          img {
+            width: 2rem;
+            height: 2rem
+          }
+        }
+      }
+
     }
 
     .project:hover {
