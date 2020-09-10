@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 
-export const Main = () => {
+export const Main = ({ moveUfo }) => {
   return (
     <div className='main-overview'>
       <div className='top-half'>
@@ -9,9 +10,30 @@ export const Main = () => {
       <div className='bottom-half'>
         <h2>Software Engineer</h2>
         <div className='icons'>
-          <a href="https://github.com/mdoudy90"><img src='./assets/github-icon.png'/></a>
-          <a href="https://www.linkedin.com/in/mdoudy/"><img src='./assets/linkedin-icon.png'/></a>
-          <a href="mailto:michael.doudy@gmail.com"><img src='./assets/mail-icon.png'/></a>
+          <a href='https://github.com/mdoudy90'>
+            <img src='./assets/github-icon.png' />
+          </a>
+          <a href='https://www.linkedin.com/in/mdoudy/'>
+            <img src='./assets/linkedin-icon.png' />
+          </a>
+          <a href='mailto:michael.doudy@gmail.com'>
+            <img src='./assets/mail-icon.png' />
+          </a>
+          {/* <a href='#projects'><p>HERE</p></a> */}
+          <Link
+            className='scroll-button'
+            activeClass='active'
+            to='projects'
+            spy={true}
+            smooth={true}
+            delay={2100}
+            duration={1800}
+            onClick={() => moveUfo('down')}>
+            <div className='arrow'>
+              <div className='arrow-top'></div>
+              <div className='arrow-bottom'></div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
