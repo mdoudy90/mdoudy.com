@@ -27,7 +27,7 @@ export const App = () => {
   };
 
   useEffect(() => {
-    if (ufoMarginTop >= 320) {
+    if (ufoMarginTop >= 420) {
       clearInterval(intID);
       let counter = 0;
       let raysDownInterval = setInterval(() => {
@@ -49,9 +49,9 @@ export const App = () => {
     if (ufoMarginTop < -280) clearInterval(intID);
   }, [ufoMarginTop]);
 
-  useEffect(() => {
-    disableBodyScroll(pageRef.current);
-  }, [pageRef]);
+  // useEffect(() => {
+  //   disableBodyScroll(pageRef.current);
+  // }, [pageRef]);
 
   return (
     <div className='app-container' ref={pageRef}>
@@ -66,12 +66,14 @@ export const App = () => {
           </div>
         </div>
 
-        {view === 'menu' && <Menu setView={setView} />}
+        <Projects />
+
+        {/* {view === 'menu' && <Menu setView={setView} />}
         {view === 'projects' && <Projects />}
         {view === 'resume' && <p>resume</p>}
         {view === 'skills' && <Skills />}
         {view === 'about' && <About />}
-        {view === 'contact' && <ContactForm />}
+        {view === 'contact' && <ContactForm />} */}
       </div>
     </div>
   );
