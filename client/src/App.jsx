@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { Main } from './components/Main';
-import { Header } from './components/Header';
+import { Menu } from './components/Menu';
 import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
 import { About } from './components/About';
@@ -12,6 +12,7 @@ export const App = () => {
   const [ufoMarginTop, setUfoMarginTop] = useState(-280);
   const [rayDisplay, setRayDisplay] = useState([0, 0, 0, 0, 0]);
   const [intID, setIntID] = useState();
+  const [view, setView] = useState('menu');
   const pageRef = useRef(null);
   let marginTop = ufoMarginTop + 'px';
 
@@ -48,20 +49,30 @@ export const App = () => {
     if (ufoMarginTop < -280) clearInterval(intID);
   }, [ufoMarginTop]);
 
-  // useEffect(() => {
-  //   disableBodyScroll(pageRef.current);
-  // }, [pageRef]);
+  useEffect(() => {
+    disableBodyScroll(pageRef.current);
+  }, [pageRef]);
 
   return (
     <div className='app-container' ref={pageRef}>
-      {/* <Header /> */}
-      {/* <Main /> */}
       <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
       <Main moveUfo={moveUfo} />
-      <Projects />
-      <Skills />
-      <About />
-      <ContactForm />
+      <div id='views' className='views-container'>
+
+        <div className='plus-btn-pos'>
+          <div className={view !== 'menu' ? 'plus-btn' : 'plus-btn menu-open-plus-btn'} onClick={()=>setView('menu')}>
+            <div className='r1'></div>
+            <div className='r2'></div>
+          </div>
+        </div>
+
+        {view === 'menu' && <Menu setView={setView} />}
+        {view === 'projects' && <Projects />}
+        {view === 'resume' && <p>resume</p>}
+        {view === 'skills' && <Skills />}
+        {view === 'about' && <About />}
+        {view === 'contact' && <ContactForm />}
+      </div>
     </div>
   );
 };

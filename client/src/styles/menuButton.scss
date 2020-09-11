@@ -1,0 +1,55 @@
+.plus-btn-pos {
+  top: 20px;
+  right: 20px;
+  z-index: 5;
+}
+
+.plus-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background: #fff;
+  position: relative;
+  cursor: pointer;
+
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.5rem;
+    height: .1rem;
+    background: #dbdbdb;
+    transition: transform 0.3s;
+    transition-delay: 0.5s;
+  }
+
+  .r1 {
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  }
+
+  .r2 {
+    transform: translateX(-50%) translateY(-50%) rotate(-180deg);
+  }
+
+  &:hover {
+    background: #fff;
+
+    div {
+      background: #000;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.menu-open-plus-btn {
+  .r1 {
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+
+  .r2 {
+    transform: translateX(-50%) translateY(-50%) rotate(-135deg);
+  }
+}

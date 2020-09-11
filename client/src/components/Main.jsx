@@ -19,11 +19,10 @@ export const Main = ({ moveUfo }) => {
           <a href='mailto:michael.doudy@gmail.com'>
             <img src='./assets/mail-icon.png' />
           </a>
-          {/* <a href='#projects'><p>HERE</p></a> */}
           <Link
             className='scroll-button'
             activeClass='active'
-            to='projects'
+            to='views'
             spy={true}
             smooth={true}
             delay={2100}
