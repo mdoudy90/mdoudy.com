@@ -13,7 +13,7 @@ export const Project = ({name, explanation, image, githubLink, liveDemoLink}) =>
       {/* <div className='project-icons'> */}
         {/* <a href={githubLink}><img src='./assets/github-gray-icon.png'/></a> */}
         {/* <a className='info-icon' href=''><img src='./assets/info-gray-icon.png'/></a> */}
-        <div className='info-icon'>i</div>
+        <a href={githubLink} target='_blank'><div className='info-icon'>i</div></a>
       {/* </div> */}
     </div>
   );
