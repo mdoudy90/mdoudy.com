@@ -3,7 +3,6 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
 import { Main } from './components/Main';
 import { Menu } from './components/Menu';
 import { Projects } from './components/Projects';
-import { Skills } from './components/Skills';
 import { About } from './components/About';
 import { ContactForm } from './components/ContactForm';
 import { Ufo } from './components/Ufo';
@@ -66,12 +65,11 @@ export const App = () => {
           </div>
         </div>
 
-        {/* <Projects /> */}
+        {/* <About /> */}
 
         {view === 'menu' && <Menu setView={setView} />}
         {view === 'projects' && <Projects />}
         {view === 'resume' && <p>resume</p>}
-        {view === 'skills' && <Skills />}
         {view === 'about' && <About />}
         {view === 'contact' && <ContactForm />}
       </div>
