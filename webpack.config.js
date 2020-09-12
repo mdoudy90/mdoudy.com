@@ -46,7 +46,16 @@ const config = {
       '.js',
       '.jsx'
     ]
-  }
+  },
+  presets: [
+    [
+      @babel/preset-env,
+      {
+        modules: false
+      }
+    ],
+    @babel/preset-react
+  ]
 };
 
 module.exports = config;
