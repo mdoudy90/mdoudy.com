@@ -8,7 +8,7 @@ export const ContactForm = () => {
         <div className='contact-links'>
           <h4>
             If you prefer to contact me directly, send your email to:{' '}
-            <a href='mailto:michael.doudy@gmail.com'>michael.doudy@gmail.com</a>
+            <a href='mailto:michael.doudy@gmail.com'>michael.doudy@gmail.com</a>. Connect with me on <a href='https://www.linkedin.com/in/mdoudy/'>LinkedIn</a> or find me on <a href='https://github.com/mdoudy90'>GitHub</a>.
           </h4>
         </div>
         <div className='contact-inputs'>

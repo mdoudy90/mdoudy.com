@@ -66,14 +66,14 @@ export const App = () => {
           </div>
         </div>
 
-        <Projects />
+        {/* <Projects /> */}
 
-        {/* {view === 'menu' && <Menu setView={setView} />}
+        {view === 'menu' && <Menu setView={setView} />}
         {view === 'projects' && <Projects />}
         {view === 'resume' && <p>resume</p>}
         {view === 'skills' && <Skills />}
         {view === 'about' && <About />}
-        {view === 'contact' && <ContactForm />} */}
+        {view === 'contact' && <ContactForm />}
       </div>
     </div>
   );
