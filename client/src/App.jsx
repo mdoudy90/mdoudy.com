@@ -56,7 +56,9 @@ export const App = () => {
     disableBodyScroll(pageRef.current);
   }, [pageRef]);
 
+  // For mobile - if accidental refresh happens
   useEffect(() => {
+    if (!mainButtonClicked) setMainButtonClicked(true);
     clearAllBodyScrollLocks();
   }, [view]);
 
