@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 export const ContactForm = () => {
   return (
     <div className='module-container'>
-      <h2>Contact</h2>
+      {/* <h2>Contact</h2> */}
       <form className='contact-form' action='mailto:michael.doudy@gmail.com' method='post' enctype='text/plain'>
         <div className='contact-links'>
           <h4>

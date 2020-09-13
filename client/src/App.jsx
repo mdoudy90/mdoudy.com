@@ -53,9 +53,9 @@ export const App = () => {
     }
   }, [ufoMarginTop]);
 
-  useEffect(() => {
-    disableBodyScroll(pageRef.current);
-  }, [pageRef]);
+  // useEffect(() => {
+  //   disableBodyScroll(pageRef.current);
+  // }, [pageRef]);
 
 
   useEffect(() => {
@@ -72,22 +72,22 @@ export const App = () => {
 
   return (
     <div className='app-container' ref={pageRef}>
-      { !mainButtonClicked &&
+      {/* { !mainButtonClicked &&
         <>
           <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
           <Main moveUfo={moveUfo} />
         </>
-      }
+      } */}
       <div id='views' className='views-container'>
 
-      { menuButtonClicked &&
+      {/* { menuButtonClicked && */}
         <div className='plus-btn-pos'>
           <div className={view !== 'menu' ? 'plus-btn' : 'plus-btn menu-open-plus-btn'} onClick={()=>setView('menu')}>
             <div className='r1'></div>
             <div className='r2'></div>
           </div>
       </div>
-       }
+       {/* } */}
 
         {/* <About /> */}
 

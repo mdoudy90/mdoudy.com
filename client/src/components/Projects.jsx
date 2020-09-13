@@ -5,7 +5,7 @@ import { projectData } from '../data/data';
 export const Projects = () => {
   return (
     <div className='module-container' id='projects'>
-      <h2>Projects</h2>
+      {/* <h2>Projects</h2> */}
       <div className='projects'>
         {projectData.map(({ name, explanation, image, githubLink, liveDemoLink }) => {
           return (
