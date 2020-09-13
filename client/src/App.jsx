@@ -62,6 +62,7 @@ export const App = () => {
       setMainButtonClicked(true);
       clearAllBodyScrollLocks();
     }
+    if (mainButtonClicked) clearAllBodyScrollLocks();
   }, [view]);
 
   return (
