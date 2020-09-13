@@ -367,8 +367,16 @@ h4, h5 {
   .module-container {
     .projects {
       justify-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+      .project {
+        height: 55vh;
+      }
     }
   }
+
+
+
   .main-overview {
     .top-half {
       height: 75vh;
