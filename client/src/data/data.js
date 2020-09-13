@@ -5,6 +5,8 @@ export const projectData = [
     image: './assets/CIA.png',
     githubLink: 'https://github.com/jmtss20/codingInterviewApp',
     liveDemoLink: '',
+    techStack: ['TypeScript','React','Redux','Node.js','Express','MongoDB','Sockets','Sass'],
+    apis: []
   },
   {
     name: 'Find My Friends',
@@ -13,6 +15,8 @@ export const projectData = [
     image: './assets/FMF.png',
     githubLink: 'https://github.com/mdoudy90/find-my-friends',
     liveDemoLink: 'https://stormy-meadow-54442.herokuapp.com/',
+    techStack: ['JavaScript','React','Node.js','Express','MongoDB','Sass'],
+    apis: ['HTML Geolocation','Google Maps','Google Places']
   },
   {
     name: 'Retail Web Portal',
@@ -20,7 +24,9 @@ export const projectData = [
       'This client-facing web portal was built out by a team of 3 devs over a span of 2 weeks following a 26 page business requirements document.',
     image: './assets/RWP.png',
     githubLink: 'https://github.com/mdoudy90/Retail-Web-Portal',
-    liveDemoLink: '',
+    liveDemoLink: 'http://agile-ocean-70740.herokuapp.com/',
+    techStack: ['JavaScript','React','Redux','Node.js','Express','Sass'],
+    apis: ['Preexisting Headless']
   },
   {
     name: 'Reviews API Service',
@@ -29,6 +35,8 @@ export const projectData = [
     image: './assets/RAP.png',
     githubLink: 'https://github.com/HR-SDC-CANOPUS/Reviews-API',
     liveDemoLink: '',
+    techStack: ['JavaScript','Node.js','Express','Postgres','Redis','Docker'],
+    apis: []
   },
   {
     name: 'Crypto Paper Trader',
@@ -37,6 +45,8 @@ export const projectData = [
     image: './assets/CPT.png',
     githubLink: 'https://github.com/mdoudy90/Crypto-Paper-Trader',
     liveDemoLink: 'https://cryptic-crag-78444.herokuapp.com/',
+    techStack: ['TypeScript','React','Node.js','Express','MongoDB'],
+    apis: ['CryptoCompare']
   },
   {
     name: 'Portfolio Website',
@@ -44,5 +54,7 @@ export const projectData = [
     image: './assets/TempPhoto.png',
     githubLink: 'https://github.com/mdoudy90/mdoudy.com',
     liveDemoLink: '',
+    techStack: ['JavaScript','React','Node.js','Express','Sass'],
+    apis: []
   },
 ];

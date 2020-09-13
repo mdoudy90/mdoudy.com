@@ -208,6 +208,58 @@ h5 {
     }
   }
 
+  .project-container {
+    height: 40vh;
+    width: 100%;
+  }
+
+  .selected-project {
+    background-color: #343434;
+    justify-self: center;
+    display: grid;
+    height: 40vh;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+    box-shadow: 5px 4px 8px 2px #bdbdbd;
+    // grid-template-rows: 6fr 2.5rem 4fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 1rem;
+
+    .selected-project-details {
+      display: grid;
+      grid-gap: 1rem;
+      align-content: baseline;
+      h3 {
+        color: #fff;
+        padding: 0.1rem 0;
+        font-size: 0.9rem;
+        // font-weight: 200;
+      }
+      h3:first-of-type {
+        color: #5db7d3;
+      }
+    }
+
+    .selected-project-links {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-gap: 2rem;
+      img {
+        width: 4rem;
+        transition: 1s;
+        filter: grayscale(100%);
+      }
+
+      img:hover {
+        filter: grayscale(0%);
+      }
+    }
+  }
+
   .project {
     justify-self: center;
     display: grid;
@@ -216,15 +268,17 @@ h5 {
     box-sizing: border-box;
     border-radius: 0.3rem;
     box-shadow: 5px 4px 8px 2px #bdbdbd;
-    grid-template-rows: 10fr 1fr 4fr 1fr;
+    grid-template-rows: 6fr 2.5rem 4fr 1fr;
     cursor: pointer;
+    transition: 0.3s;
 
     .project-caption {
       // position: absolute;
       grid-row: 2;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.25);
       width: 100%;
+      transition: 0.8s;
     }
 
     .project-info {
@@ -233,7 +287,8 @@ h5 {
 
     h3 {
       color: white;
-      padding: 0.5rem 0.75rem;
+      padding: 0.6rem 0.75rem;
+      text-align: center;
     }
 
     a {
@@ -249,9 +304,13 @@ h5 {
 
   .project:hover {
     .info-icon {
-      border: 0.15rem solid #dbdbdb;
-      background-color: #dbdbdb;
+      border: 0.15rem solid #616161;
+      background-color: #616161;
       color: #fff;
+    }
+
+    .project-caption {
+      background-color: #616161;
     }
   }
 }
@@ -385,8 +444,28 @@ h5 {
       justify-items: center;
       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 
+      .project-container {
+        height: 65vh;
+      }
+
       .project {
         height: 65vh;
+      }
+
+      .selected-project {
+        height: 65vh;
+
+        .selected-project-details {
+          h3 {
+            font-size: 1.3rem;
+          }
+        }
+
+        .selected-project-links {
+          a img {
+            width: 6rem;
+          }
+        }
       }
     }
   }

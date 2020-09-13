@@ -54,9 +54,9 @@ export const App = () => {
     }
   }, [ufoMarginTop]);
 
-  // useEffect(() => {
-  //   disableBodyScroll(pageRef.current);
-  // }, [pageRef]);
+  useEffect(() => {
+    disableBodyScroll(pageRef.current);
+  }, [pageRef]);
 
   useEffect(() => {
     // For mobile - if accidental refresh happens
