@@ -29,7 +29,9 @@ h5 {
   margin: 0;
 }
 
-input:focus, textarea:focus, select:focus{
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
 }
 
@@ -59,7 +61,8 @@ h3 {
   font-weight: 300;
 }
 
-h4, h5 {
+h4,
+h5 {
   font-family: 'system-ui';
   grid-row: 2;
   font-weight: normal;
@@ -118,7 +121,6 @@ h4, h5 {
   // grid-template-rows: 8vh 84vh 8vh;
   grid-template-rows: 8vh 92vh;
 
-
   .plus-btn-pos {
     align-self: center;
     justify-self: end;
@@ -130,6 +132,7 @@ h4, h5 {
   // height: 100vh;
   display: grid;
   align-self: center;
+  grid-row: 2;
 
   .menu-options {
     display: grid;
@@ -271,7 +274,7 @@ h4, h5 {
   }
 
   h5:first-of-type {
-    color: rgb(93,183,211);
+    color: rgb(93, 183, 211);
   }
 
   .about-sub-container {
@@ -298,7 +301,7 @@ h4, h5 {
   }
 
   .about-data {
-    border-right: .1rem solid #505050;
+    border-right: 0.1rem solid #505050;
     padding-right: 1rem;
   }
 
@@ -355,7 +358,7 @@ h4, h5 {
       height: 2.5rem;
       border: none;
       border-radius: 0.3rem;
-      background-color: #343434;;
+      background-color: #343434;
       font-size: 1.2rem;
       justify-self: end;
       cursor: pointer;
@@ -374,8 +377,6 @@ h4, h5 {
       }
     }
   }
-
-
 
   .main-overview {
     .top-half {
@@ -402,19 +403,17 @@ h4, h5 {
   }
 
   .about {
-
     .about-me {
-      border-bottom: .1rem solid #505050;
+      border-bottom: 0.1rem solid #505050;
     }
 
     .about-details {
       display: grid;
       grid-template-columns: 1fr;
 
-
       .about-data {
         border: none;
-        border-bottom: .1rem solid #505050;
+        border-bottom: 0.1rem solid #505050;
         padding: 0 0 1rem 0;
       }
 
@@ -424,4 +423,26 @@ h4, h5 {
     }
   }
 
+  .views-container {
+    .plus-btn {
+      background: #0000004a;
+      border: .2rem solid #ffffffb5;
+
+      .r1, .r2 {
+        background: #ffffffb5;
+      }
+
+      div {
+        height: 0.2rem;
+        background: #0000004a;
+      }
+      &:hover {
+        background: #ffffffb5;
+        border: .2rem solid #0000004a;
+        div {
+          background: #0000004a;
+        }
+      }
+    }
+  }
 }
