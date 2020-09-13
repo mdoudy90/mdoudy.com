@@ -5,9 +5,9 @@ import { projectData } from '../data/data';
 export const Projects = () => {
   return (
     <div className='module-container' id='projects'>
-      <h2>Projects</h2>
+      {/* <h2>Projects</h2> */}
       <div className='projects'>
-        {projectData.map(({ name, explanation, image, githubLink, liveDemoLink }) => {
+        {projectData.map(({ name, explanation, image, githubLink, liveDemoLink, techStack, apis }) => {
           return (
             <Project
               name={name}
@@ -15,6 +15,8 @@ export const Projects = () => {
               image={image}
               githubLink={githubLink}
               liveDemoLink={liveDemoLink}
+              techStack={techStack}
+              apis={apis}
             />
           );
         })}

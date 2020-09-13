@@ -12,6 +12,8 @@ export const App = () => {
   const [rayDisplay, setRayDisplay] = useState([0, 0, 0, 0, 0]);
   const [intID, setIntID] = useState();
   const [view, setView] = useState('menu');
+  const [mainButtonClicked, setMainButtonClicked] = useState(false);
+  const [menuButtonClicked, setMenuButtonClicked] = useState(false);
   const pageRef = useRef(null);
   let marginTop = ufoMarginTop + 'px';
 
@@ -19,14 +21,15 @@ export const App = () => {
     let marginTop = document.getElementById('ufo').offsetTop;
     let ufoDownInterval = setInterval(() => {
       if (direction === 'down') marginTop += 10;
-      if (direction === 'up') marginTop -= 5;
+      if (direction === 'up') marginTop -= 4;
       setUfoMarginTop(marginTop);
     }, 25);
     setIntID(ufoDownInterval);
   };
 
   useEffect(() => {
-    if (ufoMarginTop >= 420) {
+    const width = window.innerWidth;
+    if ((width > 800 && ufoMarginTop >= 420) || (width <= 800 && ufoMarginTop >= 300)) {
       clearInterval(intID);
       let counter = 0;
       let raysDownInterval = setInterval(() => {
@@ -45,25 +48,67 @@ export const App = () => {
       }, 25);
       setIntID(raysDownInterval);
     }
-    if (ufoMarginTop < -280) clearInterval(intID);
+    if (ufoMarginTop < -280) {
+      clearInterval(intID);
+      setMainButtonClicked(true);
+    }
   }, [ufoMarginTop]);
 
-  // useEffect(() => {
-  //   disableBodyScroll(pageRef.current);
-  // }, [pageRef]);
+  useEffect(() => {
+    disableBodyScroll(pageRef.current);
+  }, [pageRef]);
+
+  useEffect(() => {
+    // For mobile - if accidental refresh happens
+    if (!mainButtonClicked && view !== 'menu') {
+      setMainButtonClicked(true);
+      clearAllBodyScrollLocks();
+    }
+    if (mainButtonClicked) clearAllBodyScrollLocks();
+
+    // For menu button display
+    if (view !== 'menu' && !menuButtonClicked) setMenuButtonClicked(true);
+  }, [view]);
 
   return (
     <div className='app-container' ref={pageRef}>
-      <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
-      <Main moveUfo={moveUfo} />
+      {!mainButtonClicked && (
+        <>
+        {!!intID &&
+          <div className='stars-container'>
+            {[...Array(75).keys()].map((x) => {
+              let starDimension = `${Math.random() * 2}px`;
+              let starXCoordinate = `${Math.random() * window.innerHeight}px`;
+              let starYCoordinate = `${Math.random() * window.innerWidth}px`;
+              return (
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: starDimension,
+                    height: starDimension,
+                    backgroundColor: '#fff',
+                    borderRadius: '50%',
+                    marginTop: starXCoordinate,
+                    marginLeft: starYCoordinate
+                  }}></div>
+              );
+            })}
+          </div>}
+          <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
+          <Main moveUfo={moveUfo} />
+        </>
+      )}
       <div id='views' className='views-container'>
-
-        <div className='plus-btn-pos'>
-          <div className={view !== 'menu' ? 'plus-btn' : 'plus-btn menu-open-plus-btn'} onClick={()=>setView('menu')}>
-            <div className='r1'></div>
-            <div className='r2'></div>
+        {menuButtonClicked && (
+          <div className='plus-btn-pos'>
+            <div
+              className={view !== 'menu' ? 'plus-btn' : 'plus-btn menu-open-plus-btn'}
+              onClick={() => setView('menu')}>
+              <div className='r1'></div>
+              <div className='r2'></div>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* <About /> */}
 

@@ -7,6 +7,10 @@ $bg: black;
 $h1-font-size: 6vh;
 $h2-font-size: 4vh;
 
+// html {
+//   height: 100%;
+// }
+
 body {
   padding: 0;
   margin: 0;
@@ -25,7 +29,9 @@ h5 {
   margin: 0;
 }
 
-input:focus, textarea:focus, select:focus{
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
 }
 
@@ -55,7 +61,8 @@ h3 {
   font-weight: 300;
 }
 
-h4, h5 {
+h4,
+h5 {
   font-family: 'system-ui';
   grid-row: 2;
   font-weight: normal;
@@ -112,13 +119,12 @@ h4, h5 {
 .views-container {
   display: grid;
   // grid-template-rows: 8vh 84vh 8vh;
-  grid-template-rows: 8vh 92vh;
-
+  grid-template-rows: 100vh;
 
   .plus-btn-pos {
     align-self: center;
     justify-self: end;
-    margin-right: 1.3rem;
+    // margin-right: 1.3rem;
   }
 }
 
@@ -185,17 +191,72 @@ h4, h5 {
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 17rem));
   padding: 1rem;
+  align-self: center;
 
   .project-image-container {
     grid-row: 1;
-    max-height: 220px;
+    // max-height: 220px;
     overflow: hidden;
     position: relative;
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
 
     img {
+      height: 100%;
       width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .project-container {
+    height: 40vh;
+    width: 100%;
+  }
+
+  .selected-project {
+    background-color: #343434;
+    justify-self: center;
+    display: grid;
+    height: 40vh;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+    box-shadow: 5px 4px 8px 2px #bdbdbd;
+    // grid-template-rows: 6fr 2.5rem 4fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 1rem;
+
+    .selected-project-details {
+      display: grid;
+      grid-gap: 1rem;
+      align-content: baseline;
+      h3 {
+        color: #fff;
+        padding: 0.1rem 0;
+        font-size: 0.9rem;
+        // font-weight: 200;
+      }
+      h3:first-of-type {
+        color: #5db7d3;
+      }
+    }
+
+    .selected-project-links {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-gap: 2rem;
+      img {
+        width: 4rem;
+        transition: 1s;
+        filter: grayscale(100%);
+      }
+
+      img:hover {
+        filter: grayscale(0%);
+      }
     }
   }
 
@@ -207,22 +268,31 @@ h4, h5 {
     box-sizing: border-box;
     border-radius: 0.3rem;
     box-shadow: 5px 4px 8px 2px #bdbdbd;
+    grid-template-rows: 6fr 2.5rem 4fr 1fr;
     cursor: pointer;
+    transition: 0.3s;
 
     .project-caption {
-      position: absolute;
+      // position: absolute;
+      grid-row: 2;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.25);
       width: 100%;
+      transition: 0.8s;
+    }
+
+    .project-info {
+      grid-row: 3;
     }
 
     h3 {
       color: white;
-      padding: 0.5rem 0.75rem;
+      padding: 0.6rem 0.75rem;
+      text-align: center;
     }
 
     a {
-      grid-row: 3;
+      grid-row: 4;
       justify-self: end;
       align-self: end;
     }
@@ -234,20 +304,27 @@ h4, h5 {
 
   .project:hover {
     .info-icon {
-      border: 0.15rem solid #dbdbdb;
-      background-color: #dbdbdb;
+      border: 0.15rem solid #616161;
+      background-color: #616161;
       color: #fff;
+    }
+
+    .project-caption {
+      background-color: #616161;
     }
   }
 }
 
 .about {
-  max-width: 40rem;
+  // max-width: 40rem;
   justify-self: center;
   box-shadow: 5px 4px 8px 2px #bdbdbd;
   border-radius: 0.3rem;
   padding: 1rem;
   background-color: #343434;
+  width: 40rem;
+  min-height: 35rem;
+  align-self: center;
 
   a {
     color: #fff;
@@ -267,7 +344,7 @@ h4, h5 {
   }
 
   h5:first-of-type {
-    color: rgb(93,183,211);
+    color: rgb(93, 183, 211);
   }
 
   .about-sub-container {
@@ -275,9 +352,9 @@ h4, h5 {
     grid-gap: 1rem;
   }
 
-  .about-sub-component {
+  // .about-sub-component {
 
-  }
+  // }
 
   .about-me {
     padding: 2rem;
@@ -294,7 +371,7 @@ h4, h5 {
   }
 
   .about-data {
-    border-right: .1rem solid #505050;
+    border-right: 0.1rem solid #505050;
     padding-right: 1rem;
   }
 
@@ -312,6 +389,8 @@ h4, h5 {
   box-shadow: 5px 4px 8px 2px #bdbdbd;
   border-radius: 0.3rem;
   padding: 1rem;
+  max-height: 40rem;
+  align-self: center;
 
   .contact-links {
     grid-row: 1;
@@ -351,7 +430,7 @@ h4, h5 {
       height: 2.5rem;
       border: none;
       border-radius: 0.3rem;
-      background-color: #343434;;
+      background-color: #343434;
       font-size: 1.2rem;
       justify-self: end;
       cursor: pointer;
@@ -363,6 +442,45 @@ h4, h5 {
   .module-container {
     .projects {
       justify-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+      .project-container {
+        height: 65vh;
+      }
+
+      .project {
+        height: 65vh;
+      }
+
+      .selected-project {
+        height: 65vh;
+
+        .selected-project-details {
+          h3 {
+            font-size: 1.3rem;
+          }
+        }
+
+        .selected-project-links {
+          a img {
+            width: 6rem;
+          }
+        }
+      }
+    }
+  }
+
+  .main-overview {
+    .top-half {
+      height: 75vh;
+    }
+
+    .bottom-half {
+      height: 25vh;
+    }
+
+    .icons {
+      height: 12vh;
     }
   }
 
@@ -377,19 +495,21 @@ h4, h5 {
   }
 
   .about {
-
+    width: auto;
+    min-height: 92.5vh;
+    margin-bottom: 1rem;
+    align-self: start;
     .about-me {
-      border-bottom: .1rem solid #505050;
+      border-bottom: 0.1rem solid #505050;
     }
 
     .about-details {
       display: grid;
       grid-template-columns: 1fr;
 
-
       .about-data {
         border: none;
-        border-bottom: .1rem solid #505050;
+        border-bottom: 0.1rem solid #505050;
         padding: 0 0 1rem 0;
       }
 
@@ -399,4 +519,26 @@ h4, h5 {
     }
   }
 
+  .views-container {
+    .plus-btn {
+      background: #ffffff4f;
+      // border: .2rem solid #ffffffb5;
+
+      // .r1, .r2 {
+      //   background: #ffffffb5;
+      // }
+
+      // div {
+      //   height: 0.2rem;
+      //   background: #0000004a;
+      // }
+      // &:hover {
+      //   background: #ffffffb5;
+      //   border: .2rem solid #0000004a;
+      //   div {
+      //     background: #0000004a;
+      //   }
+      // }
+    }
+  }
 }
