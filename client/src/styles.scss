@@ -80,19 +80,19 @@ h4, h5 {
     grid-row: 1;
     background-color: #000;
     align-content: end;
-    height: 82vh;
+    height: 85vh;
   }
 
   .bottom-half {
     grid-row: 2;
     align-content: start;
-    height: 18vh;
+    height: 15vh;
   }
 
   .icons {
     display: grid;
     width: 10rem;
-    height: 10vh;
+    height: 8vh;
     grid-template-columns: 1fr 1fr 1fr;
     justify-self: center;
 
@@ -367,6 +367,19 @@ h4, h5 {
   .module-container {
     .projects {
       justify-items: center;
+    }
+  }
+  .main-overview {
+    .top-half {
+      height: 75vh;
+    }
+
+    .bottom-half {
+      height: 25vh;
+    }
+
+    .icons {
+      height: 12vh;
     }
   }
 
