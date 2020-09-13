@@ -5,11 +5,11 @@ export const Project = ({name, explanation, image, githubLink, liveDemoLink}) =>
     <div className='project'>
       <div className='project-image-container'>
         <img src = {image} />
-        <div className='project-caption'>
-          <h3>{name}</h3>
-        </div>
       </div>
-      <h5>{explanation}</h5>
+      <div className='project-caption'>
+        <h3>{name}</h3>
+      </div>
+      <h5 className='project-info'>{explanation}</h5>
       {/* <div className='project-icons'> */}
         {/* <a href={githubLink}><img src='./assets/github-gray-icon.png'/></a> */}
         {/* <a className='info-icon' href=''><img src='./assets/info-gray-icon.png'/></a> */}
