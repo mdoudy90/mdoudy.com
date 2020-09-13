@@ -29,7 +29,7 @@ export const App = () => {
 
   useEffect(() => {
     const width = window.innerWidth;
-    if (width > 800 && ufoMarginTop >= 420 || width <= 800 &&  ufoMarginTop >= 300) {
+    if ((width > 800 && ufoMarginTop >= 420) || (width <= 800 && ufoMarginTop >= 300)) {
       clearInterval(intID);
       let counter = 0;
       let raysDownInterval = setInterval(() => {
@@ -74,6 +74,26 @@ export const App = () => {
     <div className='app-container' ref={pageRef}>
       {!mainButtonClicked && (
         <>
+        {!!intID &&
+          <div className='stars-container'>
+            {[...Array(75).keys()].map((x) => {
+              let starDimension = `${Math.random() * 2}px`;
+              let starXCoordinate = `${Math.random() * window.innerHeight}px`;
+              let starYCoordinate = `${Math.random() * window.innerWidth}px`;
+              return (
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: starDimension,
+                    height: starDimension,
+                    backgroundColor: '#fff',
+                    borderRadius: '50%',
+                    marginTop: starXCoordinate,
+                    marginLeft: starYCoordinate
+                  }}></div>
+              );
+            })}
+          </div>}
           <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
           <Main moveUfo={moveUfo} />
         </>
