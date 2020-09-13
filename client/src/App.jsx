@@ -21,14 +21,15 @@ export const App = () => {
     let marginTop = document.getElementById('ufo').offsetTop;
     let ufoDownInterval = setInterval(() => {
       if (direction === 'down') marginTop += 10;
-      if (direction === 'up') marginTop -= 5;
+      if (direction === 'up') marginTop -= 4;
       setUfoMarginTop(marginTop);
     }, 25);
     setIntID(ufoDownInterval);
   };
 
   useEffect(() => {
-    if (ufoMarginTop >= 420) {
+    const width = window.innerWidth;
+    if (width > 800 && ufoMarginTop >= 420 || width <= 800 &&  ufoMarginTop >= 300) {
       clearInterval(intID);
       let counter = 0;
       let raysDownInterval = setInterval(() => {
@@ -57,7 +58,6 @@ export const App = () => {
   //   disableBodyScroll(pageRef.current);
   // }, [pageRef]);
 
-
   useEffect(() => {
     // For mobile - if accidental refresh happens
     if (!mainButtonClicked && view !== 'menu') {
@@ -72,22 +72,23 @@ export const App = () => {
 
   return (
     <div className='app-container' ref={pageRef}>
-      {/* { !mainButtonClicked &&
+      {!mainButtonClicked && (
         <>
           <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
           <Main moveUfo={moveUfo} />
         </>
-      } */}
+      )}
       <div id='views' className='views-container'>
-
-      {/* { menuButtonClicked && */}
-        <div className='plus-btn-pos'>
-          <div className={view !== 'menu' ? 'plus-btn' : 'plus-btn menu-open-plus-btn'} onClick={()=>setView('menu')}>
-            <div className='r1'></div>
-            <div className='r2'></div>
+        {menuButtonClicked && (
+          <div className='plus-btn-pos'>
+            <div
+              className={view !== 'menu' ? 'plus-btn' : 'plus-btn menu-open-plus-btn'}
+              onClick={() => setView('menu')}>
+              <div className='r1'></div>
+              <div className='r2'></div>
+            </div>
           </div>
-      </div>
-       {/* } */}
+        )}
 
         {/* <About /> */}
 

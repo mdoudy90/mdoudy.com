@@ -25,8 +25,8 @@ export const Main = ({ moveUfo }) => {
             to='views'
             spy={true}
             smooth={true}
-            delay={2100}
-            duration={1800}
+            delay={2300}
+            duration={1000}
             onClick={() => moveUfo('down')}>
             <div className='arrow'>
               <div className='arrow-top'></div>
