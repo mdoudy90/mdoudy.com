@@ -58,7 +58,7 @@ export const App = () => {
 
   // For mobile - if accidental refresh happens
   useEffect(() => {
-    if (!mainButtonClicked) setMainButtonClicked(true);
+    if (!mainButtonClicked && view !== 'menu') setMainButtonClicked(true);
     clearAllBodyScrollLocks();
   }, [view]);
 
