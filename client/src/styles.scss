@@ -263,6 +263,9 @@ h5 {
   border-radius: 0.3rem;
   padding: 1rem;
   background-color: #343434;
+  width: 40rem;
+  min-height: 35rem;
+  align-self: center;
 
   a {
     color: #fff;
@@ -413,6 +416,10 @@ h5 {
   }
 
   .about {
+    width: auto;
+    min-height: 92.5vh;
+    margin-bottom: 1rem;
+    align-self: start;
     .about-me {
       border-bottom: 0.1rem solid #505050;
     }
