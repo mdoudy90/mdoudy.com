@@ -124,7 +124,7 @@ h5 {
   .plus-btn-pos {
     align-self: center;
     justify-self: end;
-    margin-right: 1.3rem;
+    // margin-right: 1.3rem;
   }
 }
 
@@ -425,24 +425,24 @@ h5 {
 
   .views-container {
     .plus-btn {
-      background: #0000004a;
-      border: .2rem solid #ffffffb5;
+      background: #ffffff4f;
+      // border: .2rem solid #ffffffb5;
 
-      .r1, .r2 {
-        background: #ffffffb5;
-      }
+      // .r1, .r2 {
+      //   background: #ffffffb5;
+      // }
 
-      div {
-        height: 0.2rem;
-        background: #0000004a;
-      }
-      &:hover {
-        background: #ffffffb5;
-        border: .2rem solid #0000004a;
-        div {
-          background: #0000004a;
-        }
-      }
+      // div {
+      //   height: 0.2rem;
+      //   background: #0000004a;
+      // }
+      // &:hover {
+      //   background: #ffffffb5;
+      //   border: .2rem solid #0000004a;
+      //   div {
+      //     background: #0000004a;
+      //   }
+      // }
     }
   }
 }
