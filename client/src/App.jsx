@@ -49,13 +49,16 @@ export const App = () => {
     if (ufoMarginTop < -280) {
       clearInterval(intID);
       setMainButtonClicked(true);
-      clearAllBodyScrollLocks();
     }
   }, [ufoMarginTop]);
 
   useEffect(() => {
     disableBodyScroll(pageRef.current);
   }, [pageRef]);
+
+  useEffect(() => {
+    clearAllBodyScrollLocks();
+  }, [view]);
 
   return (
     <div className='app-container' ref={pageRef}>
