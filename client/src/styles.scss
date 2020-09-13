@@ -7,9 +7,9 @@ $bg: black;
 $h1-font-size: 6vh;
 $h2-font-size: 4vh;
 
-html {
-  height: 99%;
-}
+// html {
+//   height: 100%;
+// }
 
 body {
   padding: 0;
@@ -80,19 +80,19 @@ h4, h5 {
     grid-row: 1;
     background-color: #000;
     align-content: end;
-    height: 85vh;
+    height: 82vh;
   }
 
   .bottom-half {
     grid-row: 2;
     align-content: start;
-    height: 15vh;
+    height: 18vh;
   }
 
   .icons {
     display: grid;
     width: 10rem;
-    height: 8vh;
+    height: 10vh;
     grid-template-columns: 1fr 1fr 1fr;
     justify-self: center;
 
