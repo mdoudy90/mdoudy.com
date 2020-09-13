@@ -12,6 +12,7 @@ export const App = () => {
   const [rayDisplay, setRayDisplay] = useState([0, 0, 0, 0, 0]);
   const [intID, setIntID] = useState();
   const [view, setView] = useState('menu');
+  const [mainButtonClicked, setMainButtonClicked] = useState(false);
   const pageRef = useRef(null);
   let marginTop = ufoMarginTop + 'px';
 
@@ -45,17 +46,25 @@ export const App = () => {
       }, 25);
       setIntID(raysDownInterval);
     }
-    if (ufoMarginTop < -280) clearInterval(intID);
+    if (ufoMarginTop < -280) {
+      clearInterval(intID);
+      setMainButtonClicked(true);
+      clearAllBodyScrollLocks();
+    }
   }, [ufoMarginTop]);
 
-  // useEffect(() => {
-  //   disableBodyScroll(pageRef.current);
-  // }, [pageRef]);
+  useEffect(() => {
+    disableBodyScroll(pageRef.current);
+  }, [pageRef]);
 
   return (
     <div className='app-container' ref={pageRef}>
-      <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
-      <Main moveUfo={moveUfo} />
+      { !mainButtonClicked &&
+        <>
+          <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
+          <Main moveUfo={moveUfo} />
+        </>
+      }
       <div id='views' className='views-container'>
 
         <div className='plus-btn-pos'>
