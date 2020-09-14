@@ -40,8 +40,15 @@ const config = {
         ]
       },
       {
-        test: /\.svg$/,
-        use: 'file-loader'
+        test: /\.(pdf|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },

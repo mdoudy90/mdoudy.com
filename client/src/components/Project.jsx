@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import DemoIcon from '../assets/demo-icon.png';
+import GitHubIconGreen from '../assets/github-green-icon.png';
 
 export const Project = ({ name, explanation, image, githubLink, liveDemoLink, techStack, apis }) => {
   const [detailsView, toggleDetailsView] = useState(false);
@@ -26,11 +28,11 @@ export const Project = ({ name, explanation, image, githubLink, liveDemoLink, te
           <div className='selected-project-links'>
             {!!liveDemoLink.length && (
               <a href={liveDemoLink} target='_blank' onClick={(e) => e.stopPropagation()}>
-                <img src='./assets/demo-icon.png' />
+                <img src={DemoIcon} />
               </a>
             )}
             <a href={githubLink} target='_blank' onClick={(e) => e.stopPropagation()}>
-              <img src='./assets/github-green-icon.png' />
+              <img src={GitHubIconGreen} />
             </a>
           </div>
         </div>
@@ -43,10 +45,6 @@ export const Project = ({ name, explanation, image, githubLink, liveDemoLink, te
             <h3>{name}</h3>
           </div>
           <h5 className='project-info'>{explanation}</h5>
-          {/* <div className='project-icons'> */}
-          {/* <a href={githubLink}><img src='./assets/github-gray-icon.png'/></a> */}
-          {/* <a className='info-icon' href=''><img src='./assets/info-gray-icon.png'/></a> */}
-          {/* <a href={githubLink} target='_blank'> */}
           <a>
             <div className='info-icon'>i</div>
           </a>

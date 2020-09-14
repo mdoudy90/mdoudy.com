@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
+import GitHubIcon from '../assets/github-icon.png';
+import LinkedInIcon from '../assets/linkedin-icon.png';
+import MailIcon from '../assets/mail-icon.png';
 
 export const Main = ({ moveUfo }) => {
   return (
@@ -11,13 +14,13 @@ export const Main = ({ moveUfo }) => {
         <h2>Software Engineer</h2>
         <div className='icons'>
           <a href='https://github.com/mdoudy90'>
-            <img src='./assets/github-icon.png' />
+            <img src={GitHubIcon} />
           </a>
           <a href='https://www.linkedin.com/in/mdoudy/'>
-            <img src='./assets/linkedin-icon.png' />
+            <img src={LinkedInIcon} />
           </a>
           <a href='mailto:michael.doudy@gmail.com'>
-            <img src='./assets/mail-icon.png' />
+            <img src={MailIcon} />
           </a>
           <Link
             className='scroll-button'
