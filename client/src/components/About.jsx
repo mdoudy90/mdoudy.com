@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 export const About = () => {
   return (
     <div className='module-container'>
-      {/* <h2>About</h2> */}
       <div className='about'>
         <div className='about-me'>
           <h2>Hi! I'm Michael, a software engineer based in New York City.</h2>
