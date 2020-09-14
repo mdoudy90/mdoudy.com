@@ -1,0 +1,76 @@
+.plus-btn-pos {
+  top: 2rem;
+  right: 2rem;
+  z-index: 15;
+  position: fixed;
+}
+
+.plus-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  background: #fff;
+  position: relative;
+  cursor: pointer;
+
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.5rem;
+    height: 0.1rem;
+    background: #dbdbdb;
+    transition: transform 0.3s;
+    transition-delay: 0.5s;
+  }
+
+  .r1 {
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  }
+
+  .r2 {
+    transform: translateX(-50%) translateY(-50%) rotate(-180deg);
+  }
+
+  &:hover {
+    background: #fff;
+
+    div {
+      background: #000;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.menu-open-plus-btn {
+  .r1 {
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+
+  .r2 {
+    transform: translateX(-50%) translateY(-50%) rotate(-135deg);
+  }
+}
+
+// @media only screen and (max-width: 800px) {
+//   .plus-btn-pos {
+//     top: 1rem;
+//     right: 1rem;
+//   }
+
+//   .plus-btn {
+//     width: 2rem;
+//     height: 2rem;
+//     border-radius: 2rem;
+
+//     div {
+//       top: 50%;
+//       left: 50%;
+//       width: 1.5rem;
+//       height: 0.1rem;
+//     }
+//   }
+// }
