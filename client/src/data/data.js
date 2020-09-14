@@ -1,7 +1,7 @@
 export const projectData = [
   {
     name: 'Coding Interview App',
-    explanation: 'Under construction',
+    explanation: 'Currently under construction. This application will streamline the technical interview process and collect progress data which interviewers can review.',
     image: './assets/CIA.png',
     githubLink: 'https://github.com/jmtss20/codingInterviewApp',
     liveDemoLink: '',
@@ -50,8 +50,8 @@ export const projectData = [
   },
   {
     name: 'Portfolio Website',
-    explanation: 'Inception!',
-    image: './assets/TempPhoto.png',
+    explanation: 'Inception! This website was built with love. Hope you like it!',
+    image: './assets/MPW.png',
     githubLink: 'https://github.com/mdoudy90/mdoudy.com',
     liveDemoLink: '',
     techStack: ['JavaScript','React','Node.js','Express','Sass'],
