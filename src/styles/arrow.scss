@@ -81,7 +81,7 @@
 }
 
 .arrow[button-jiggling=true]:hover {
-  animation: none;
+  animation-play-state: paused;
 }
 
 @keyframes shake {
