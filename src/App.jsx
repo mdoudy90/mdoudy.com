@@ -110,8 +110,6 @@ export const App = () => {
           </div>
         )}
 
-        {/* <About /> */}
-
         {view === 'menu' && <Menu setView={setView} />}
         {view === 'projects' && <Projects />}
         {view === 'resume' && <p>resume</p>}

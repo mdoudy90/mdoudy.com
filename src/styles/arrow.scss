@@ -68,3 +68,32 @@
     transform: scale(.9) rotate(90deg);
   }
 }
+
+.arrow[button-jiggling=true] {
+  animation: shake .5s;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+  .arrow-top,
+  .arrow-bottom {
+    background-color: rgb(255, 0, 0);
+    transition: 5s;
+  }
+}
+
+.arrow[button-jiggling=true]:hover {
+  animation-play-state: paused;
+}
+
+@keyframes shake {
+  0% { transform: rotate(90deg) translate(1px, 1px)}
+  10% { transform: rotate(90deg) translate(-1px, -2px) }
+  20% { transform: rotate(90deg) translate(-3px, 0px)}
+  30% { transform: rotate(90deg) translate(3px, 2px)}
+  40% { transform: rotate(90deg) translate(1px, -1px)}
+  50% { transform: rotate(90deg) translate(-1px, 2px) }
+  60% { transform: rotate(90deg) translate(-3px, 1px)}
+  70% { transform: rotate(90deg) translate(3px, 1px) }
+  80% { transform: rotate(90deg) translate(-1px, -1px)}
+  90% { transform: rotate(90deg) translate(1px, 2px)}
+  100% { transform: rotate(90deg) translate(1px, -2px) }
+}
