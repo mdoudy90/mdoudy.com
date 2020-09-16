@@ -4,7 +4,17 @@ import GitHubIcon from '../assets/github-icon.png';
 import LinkedInIcon from '../assets/linkedin-icon.png';
 import MailIcon from '../assets/mail-icon.png';
 
+let bool = true;
+
 export const Main = ({ moveUfo }) => {
+  const [buttonJiggling, toggleButtonJiggling] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      toggleButtonJiggling(true);
+    }, 10000)
+  }, [])
+
   return (
     <div className='main-overview'>
       <div className='top-half'>
@@ -30,8 +40,11 @@ export const Main = ({ moveUfo }) => {
             smooth={true}
             delay={2300}
             duration={1000}
-            onClick={() => moveUfo('down')}>
-            <div className='arrow'>
+            onClick={() => {
+              toggleButtonJiggling(false);
+              moveUfo('down');
+            }}>
+            <div className='arrow' button-jiggling={`${buttonJiggling}`}>
               <div className='arrow-top'></div>
               <div className='arrow-bottom'></div>
             </div>
