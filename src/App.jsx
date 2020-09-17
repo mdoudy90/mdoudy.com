@@ -11,7 +11,7 @@ export const App = () => {
   const [ufoMarginTop, setUfoMarginTop] = useState(-280);
   const [rayDisplay, setRayDisplay] = useState([0, 0, 0, 0, 0]);
   const [intID, setIntID] = useState();
-  const [view, setView] = useState('menu');
+  const [view, setView] = useState(['menu']);
   const [mainButtonClicked, setMainButtonClicked] = useState(false);
   const [menuButtonClicked, setMenuButtonClicked] = useState(false);
   const pageRef = useRef(null);
@@ -27,9 +27,15 @@ export const App = () => {
     setIntID(ufoDownInterval);
   };
 
+  const updateViews = (newView) => {
+    let views = !newView ? [view[1], view[0]] : [newView, view[0]];
+    setView(views);
+  };
+
   useEffect(() => {
     const width = window.innerWidth;
-    if ((width > 800 && ufoMarginTop >= 420) || (width <= 800 && ufoMarginTop >= 300)) {
+    const height = window.innerHeight;
+    if ((width > 800 && ufoMarginTop >= Math.floor(height * .4)) || (width <= 800 && ufoMarginTop >= Math.floor(height * .3))) {
       clearInterval(intID);
       let counter = 0;
       let raysDownInterval = setInterval(() => {
@@ -60,40 +66,41 @@ export const App = () => {
 
   useEffect(() => {
     // For mobile - if accidental refresh happens
-    if (!mainButtonClicked && view !== 'menu') {
+    if (!mainButtonClicked && view[0] !== 'menu') {
       setMainButtonClicked(true);
       clearAllBodyScrollLocks();
     }
     if (mainButtonClicked) clearAllBodyScrollLocks();
 
     // For menu button display
-    if (view !== 'menu' && !menuButtonClicked) setMenuButtonClicked(true);
+    if (view[0] !== 'menu' && !menuButtonClicked) setMenuButtonClicked(true);
   }, [view]);
 
   return (
     <div className='app-container' ref={pageRef}>
       {!mainButtonClicked && (
         <>
-        {!!intID &&
-          <div className='stars-container'>
-            {[...Array(75).keys()].map((x) => {
-              let starDimension = `${Math.random() * 2}px`;
-              let starXCoordinate = `${Math.random() * window.innerHeight}px`;
-              let starYCoordinate = `${Math.random() * window.innerWidth}px`;
-              return (
-                <div
-                  style={{
-                    position: 'absolute',
-                    width: starDimension,
-                    height: starDimension,
-                    backgroundColor: '#fff',
-                    borderRadius: '50%',
-                    marginTop: starXCoordinate,
-                    marginLeft: starYCoordinate
-                  }}></div>
-              );
-            })}
-          </div>}
+          {!!intID && (
+            <div className='stars-container'>
+              {[...Array(75).keys()].map((x) => {
+                let starDimension = `${Math.random() * 2}px`;
+                let starXCoordinate = `${Math.random() * window.innerHeight}px`;
+                let starYCoordinate = `${Math.random() * window.innerWidth}px`;
+                return (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      width: starDimension,
+                      height: starDimension,
+                      backgroundColor: '#fff',
+                      borderRadius: '50%',
+                      marginTop: starXCoordinate,
+                      marginLeft: starYCoordinate,
+                    }}></div>
+                );
+              })}
+            </div>
+          )}
           <Ufo marginTop={marginTop} rayDisplay={rayDisplay} />
           <Main moveUfo={moveUfo} />
         </>
@@ -102,19 +109,19 @@ export const App = () => {
         {menuButtonClicked && (
           <div className='plus-btn-pos'>
             <div
-              className={view !== 'menu' ? 'plus-btn' : 'plus-btn menu-open-plus-btn'}
-              onClick={() => setView('menu')}>
+              className={view[0] !== 'menu' ? 'plus-btn' : 'plus-btn menu-open-plus-btn'}
+              onClick={() => (view[0] === 'menu' ? updateViews() : updateViews('menu'))}>
               <div className='r1'></div>
               <div className='r2'></div>
             </div>
           </div>
         )}
 
-        {view === 'menu' && <Menu setView={setView} />}
-        {view === 'projects' && <Projects />}
-        {view === 'resume' && <p>resume</p>}
-        {view === 'about' && <About />}
-        {view === 'contact' && <ContactForm />}
+        {view[0] === 'menu' && <Menu updateViews={updateViews} />}
+        {view[0] === 'projects' && <Projects />}
+        {view[0] === 'resume' && <p>resume</p>}
+        {view[0] === 'about' && <About />}
+        {view[0] === 'contact' && <ContactForm />}
       </div>
     </div>
   );
